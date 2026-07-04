@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,13 +28,19 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased text-slate-900 bg-white">
         {/* Header imported from components folder*/}
-        <Header />
 
-        <main className="flex-1 bg-white">
+        <header className="relative z-50">
+          <Header />
+        </header>
+
+        <main className="grow">
           {children}
         </main>
-
-        <Footer />
+        
+        {/* Footer imported from components folder */}
+        <footer className="relative z-50">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

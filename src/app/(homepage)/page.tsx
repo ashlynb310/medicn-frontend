@@ -1,4 +1,4 @@
-// Page.tsx: This page is the homepage for the website.
+// src/app/(homepage)/page.tsx: This page is the homepage for the website.
 'use client';
 
 import Image from 'next/image';

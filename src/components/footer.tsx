@@ -19,7 +19,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full border-t border-slate-200 bg-white px-6 py-16">
+        <footer className="w-full border-t z-50 border-slate-200 bg-white px-6 py-16">
             <div className="mx-auto flex max-w-7xl flex-col justify-between gap-12 md:flex-row md:items-start">
                 <div className="flex flex-col items-start max-w-sm">
                     <Link href="/" aria-label="Homepage" className="hover:opacity-80 transition-opacity">

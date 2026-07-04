@@ -9,6 +9,7 @@ export default function Dropdown() {
             </span>
 
             {/*Dropdown Menu Panel*/}
+            
             <div className="absolute right-0 top-full mt-1 hidden group-hover:block w-48 bg-white border border-slate-600 rounded-lg shadow-lg py-2 z-50">
                 <Link href="/how-it-works" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900">
                 How It Works
