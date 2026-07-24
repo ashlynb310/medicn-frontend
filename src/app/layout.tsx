@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import NavBar from "@/components/nav-bar";
+import NavBottom from "@/components/nav-bottom";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,20 +26,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased text-slate-900 bg-white">
-        {/* Header imported from components folder*/}
+      <body className="antialiased text-slate-900 bg-white min-h-screen flex flex-col">
 
-        <header className="relative z-50">
-          <Header />
+        {/* Sticky Header */}
+        <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shrink-0">
+          <NavBar />
         </header>
 
-        <main className="grow">
+        {/* Use pt-[80px - 1], the size of the NavBar header component, so header does not cover content*/}
+        <main className="flex-1 flex flex-col min-h-0 pt-[79px]">
           {children}
         </main>
         
-        {/* Footer imported from components folder */}
-        <footer className="relative z-50">
-          <Footer />
+        {/* Global Footer */}
+        <footer className="w-full shrink-0">
+          <NavBottom />
         </footer>
       </body>
     </html>

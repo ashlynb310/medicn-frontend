@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Button } from '@/components/ui/button'; //Import shadcn/ui button
+import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import CityCarousel from '@/components/city-carousel';
 import SearchInput from '@/components/search-input';
@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full flex flex-col pb-16">
+    <div className="w-full flex flex-col">
 
       {/* Section 1: Background Image With Text and Search Input Field */}
       <section className="relative h-160 w-full flex flex-col items-center pt-36 px-6 text-center">
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="mt-16 text-center">
           <Button
             onClick={() => router.push('/post')}
-            className="bg-[#0a2c58] hover:bg-slate-100 text-white font-bold px-8 py-6 rounded-xl text-md shadow-xl transition-all hover:shadow-2xl">
+            className="bg-[#0a2c58] hover:bg-slate-900 text-white font-bold px-8 py-6 rounded-xl text-md shadow-xl transition-all hover:shadow-2xl">
             List Your Property
           </Button>
 
@@ -139,9 +139,9 @@ export default function Home() {
       </section>
 
       {/* Section 4:  */}
-      <section className="w-full bg-[#E6F7FF] h-auto flex flex-col py-12 px-6">
-        <div className="w-full max-w-7xl mx-auto flex flex-col">
-          <div className="text-center flex flex-col items-center gap-3 mb-24 max-w-2xl mx-auto">
+      <section className="w-full block bg-[#E6F7FF] h-auto m-0 py-12 px-6">
+        <div className="w-full max-w-7xl mx-auto flex flex-col py-12">
+          <div className="text-center flex flex-col items-center gap-3 max-w-2xl mx-auto">
             <h1 className="text-4xl text-black md:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-md">
               Why The MediCN Is Different
             </h1>
@@ -152,7 +152,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-12 max-w-2xl mr-auto w-full">
+          <div className="flex flex-col gap-12 max-w-2xl mr-auto w-full pt-12">
             <div className="flex flex-col gap-3 max-w-2xl mr-auto">
               <h2 className="text-2xl font-bold text-black tracking-tight">
                 Built for Healthcare Professionals

@@ -1,10 +1,10 @@
-// src/app/header.tsx
+// src/app/nav-header.tsx
 
 import Link from 'next/link';
 import Image from 'next/image';
-import Dropdown from '@/components/dropdown';
+import LearnMoreDropdown from '@/components/learn-more-dropdown';
 
-export default function Header() {
+export default function NavHeader() {
     return (
         /* sticky top-0: Locks the header to the top of the viewport when scrolling.
       z-50: Ensures the header stays stacked on top of all body content.
@@ -17,10 +17,10 @@ export default function Header() {
                 <div className="flex items-center">
                     <Link href="/" aria-label="Homepage" className="flex items-center gap-3 group">
                         <Image
-                            src="600x600_Placeholder_Image.svg"
-                            alt="Placeholder for Company Logo"
-                            width={54}
-                            height={36}
+                            src="/logos/FullLogo_Transparent.png"
+                            alt="Company Logo"
+                            width={150}
+                            height={100}
                             className="h-9 w-auto"
                             priority
                         />
@@ -37,8 +37,8 @@ export default function Header() {
                     Search Listing
                     </Link>
 
-                    {/*Learn More ▼ Dropdown Component */}
-                    <Dropdown />
+                    {/*Learn More Dropdown Component */}
+                    <LearnMoreDropdown/>
                     
                     <Link href="/signup" className="text-slate-700 hover:text-black transition-colors">
                     Sign Up

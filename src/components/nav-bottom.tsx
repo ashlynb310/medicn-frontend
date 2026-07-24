@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Footer() {
+export default function NavBottom() {
     const columnOneLinks = [
         { label: 'About Us', href: '/about'},
         { label: 'Search Listings', href: '/search'},
@@ -19,22 +19,22 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full border-t z-50 border-slate-200 bg-white px-6 py-16">
-            <div className="mx-auto flex max-w-7xl flex-col justify-between gap-12 md:flex-row md:items-start">
+        <footer className="bg-[#1F3A5F] border-t border-slate-700 z-40 px-6 py-6">
+            <div className="mx-auto flex flex-col max-w-7xl justify-between gap-12 md:flex-row md:items-start">
                 <div className="flex flex-col items-start max-w-sm">
-                    <Link href="/" aria-label="Homepage" className="hover:opacity-80 transition-opacity">
-                        <Image 
-                        src="/600x600_Placeholder_Image.svg" 
-                        alt="Company Logo"
-                        width={150}
-                        height={100}
-                        className="h-10 w-auto"
-                        />
-                    </Link>
+                    <div className="h-[120px] w-[180px] flex items-center">
+                        <Link href="/" className="relative w-full h-full block">
+                            <Image
+                                src="/logos/FullLogo.jpg"
+                                alt="Company Logo"
+                                fill
+                                className="object-contain object-left"
+                                priority
+                            />
+                        </Link>
+                    </div>
 
-                    <p>
-                        Your Community. Your Home. Your Network.
-                    </p>
+                    <p className="text-white">Your Community. Your Home. Your Network.</p>
 
                     <div className="mt-6 flex items-center gap-5 text-slate-400">
                         {/* Facebook */}
@@ -121,13 +121,14 @@ export default function Footer() {
                             className="h-5 w-5 object-contain" 
                             />
                         </a>
-                        </div>
+                    </div>
 
-                    <p className="mt-12 text-sm text-slate-500">
+                    <p className="mt-12 text-sm text-white">
                         &copy; 2025 Lifestyle Spaces Inc. All rights reserved.
                     </p>
                 </div>
 
+                {/* Two column grid of Links */}
                 <div className="grid grid-cols-2 gap-x-16 gap-y-10 md:gap-x-24">
           
                     {/* Navigation Column 1 */}
@@ -135,7 +136,7 @@ export default function Footer() {
                         <ul className="flex flex-col gap-3">
                             {columnOneLinks.map((link, idx) => (
                             <li key={idx}>
-                                <Link href={link.href} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                                <Link href={link.href} className=" text-white hover:text-slate-300 transition-colors">
                                     {link.label}
                                 </Link>
                             </li>
@@ -143,11 +144,12 @@ export default function Footer() {
                         </ul>
                     </div>
 
+                    {/* Navigation Column 2 */}
                     <div className="flex flex-col gap-4">
                         <ul className="flex flex-col gap-3">
                         {columnTwoLinks.map((link, idx) => (
                             <li key={idx}>
-                                <Link href={link.href} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+                                <Link href={link.href} className=" text-white hover:text-slate-300 transition-colors">
                                     {link.label}
                                 </Link>
                             </li>
@@ -159,4 +161,3 @@ export default function Footer() {
         </footer>
     )
 }
-
